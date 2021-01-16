@@ -1,15 +1,16 @@
 import discord
-import config  # local module
 
 import platform
 import os
 
 os = platform.system()
+token = ""
 
 class Bot(discord.Client):
     token = ""
     def __init__(self):
         # reads the token from token.txt
+        super().__init__() # necessary when __init__() is created
         with open("/etc/share/kermit-token.txt") as file:
             self.token = file.read()
 
