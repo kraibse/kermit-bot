@@ -1,2 +1,2 @@
 # kermit-bot
-Discord bot for personal use. No redistribution originally intended.
+All-round bot for my personal Discord server.
