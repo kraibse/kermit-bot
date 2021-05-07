@@ -1,26 +1,40 @@
+'''
+@author: kraibse
+
+Runs the custom bot "Kermit the Frog".
+'''
+
+# import os
+import platform
+
 import discord
 
-import platform
-import os
-
 os = platform.system()
-token = ""
 
 class Bot(discord.Client):
+    '''
+    Kermit discord bot class.
+    Here are all the functionalities of it defined.
+    '''
     token = ""
     def __init__(self):
-        # reads the token from token.txt
         super().__init__() # necessary when __init__() is created
-        with open("/etc/share/kermit-token.txt") as file:
+        with open("./creds.txt") as file:
             self.token = file.read()
 
 
     async def on_ready(self):
+        '''
+        Runs when the bot first starts up and has connected to the servers.
+        '''
         # runs on first execution
         print("Logged in as '{}'".format(self.user))
 
 
     async def on_message(self, message):
+        '''
+        Runs when the bot reads a new message.
+        '''
         # runs on message received
         print(message.content)
 
